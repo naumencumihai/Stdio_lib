@@ -1,0 +1,21 @@
+README
+Naumencu Mihai
+336 CA
+
+Tema 2 - SO
+Biblioteca stdio
+
+Am implemetat o structura se tip _so_file direct in so_stdio.c,
+de altfel, nu prea am umblat in biblioteca data in schelet (so_stdio.h).
+Aceasta structura are campuri ce pot fi returnate direct in cazul unor functii
+(cursor pentru so_ftell, errors pentru so_ferror, eof pentru so_feof, 
+fd pentru so_fileno). 
+Functia de open tine cont de modul precizat si seteaza flagurile adecvate.
+Functia de close inchide file descriptorul si elibereaza memoria alocata
+structurii.
+
+Functiile de read/write au fost implementata folosindu-ma de so_fgetc si so_fputc.
+Functia de flush scrie din buffer, dupa care il goleste, functia are sens
+doar dupa ce urmeaza unei operatii de write.
+Functia fseek muta cursorul in functie de ultima operatie (daca e write face flush,
+daca e read, elibereaza bufferul).
